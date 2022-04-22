@@ -50,3 +50,22 @@ def twoSum(self, nums, target):
         
             
 twoSum([2,7,11,15],9)
+
+
+# Didn't look up optimal solution
+
+# Optimal Solution
+
+def twoSum(self, nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    prevMap = {} # val : index
+    for i, n in enumerate(nums):
+        diff = target - n
+        if diff in prevMap:
+            return [prevMap[diff], i]
+        prevMap[n] = i
+    return
